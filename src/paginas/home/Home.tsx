@@ -5,11 +5,11 @@ import './Home.css';
 function Home(){
     return (
         <>
-       <Grid container direction="row" justifyContent="center"  alignItems="center" style={{backgroundColor: "#6B8E23"}}>
+       <Grid container direction="row" justifyContent="center"  alignItems="center" style={{backgroundColor: "#ffffff"}}>
            <Grid alignItems="center"  item xs={6}>
                <Box paddingX={20} >
-<Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{color: "white" , fontWeight: "Bold "}}>Seja bem vindo(a)!</Typography>
-<Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{color: "white" , fontWeight: "Bold "}}>Ao Mercado da Sustentabilidade</Typography>
+<Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{color: "#BD8A44" , fontWeight: "bold "}}>Seja bem vindo(a)!</Typography>
+<Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{color: "#BD8A44"}}>Ao Mercado da Sustentabilidade</Typography>
        </Box>
        <Box display="flex" justifyContent="center">
            <Box marginRight={1} >

@@ -1,6 +1,5 @@
 import React from 'react';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import { Typography, Box, Grid } from '@material-ui/core';
 
 function Footer() {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Box } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 import MenuIcon from '@material-ui/icons/Menu';
 
 function Navbar() {
@@ -7,45 +8,53 @@ function Navbar() {
         <>
             <AppBar position="static" >
                 <Toolbar variant="dense">
-                    <Box style={{ cursor: "pointer " }} >
-                        <Typography variant="h5" color="inherit">
-                            Home
-                        </Typography>
-                    </Box>
-
-                    <Box display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                Quem somos
+                    <Link to='/Home' className='text-decorator-none'>
+                        <Box className="cursor" >
+                            <Typography variant="h5" color="inherit">
+                                SaveNature
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                Produtos
+                    </Link>
+
+                    <Box display="flex" justifyContent="start">
+                        <Link to='/SobreNos' className='text-decorator-none'>
+                            <Box mx={1} className="cursor">
+                                <Typography variant="h6" color="inherit">
+                                    Sobre Nós
                                 </Typography>
-                    </Box>
-                    <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant="h6"  color="inherit">
-                            Mural
-                        </Typography>
-                    </Box>
-                    <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant="h6" color="inherit" >
-                            Extras
-                        </Typography>
-                    </Box>
-                    <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant="h6" color="inherit" >
-                            Localização
-                        </Typography>
+                            </Box>
+                        </Link>
+                        <Link to='/Produtos' className='text-decorator-none'>
+                            <Box mx={1} className="cursor">
+                                <Typography variant="h6" color="inherit">
+                                    Produtos
+                                </Typography>
+                            </Box>
+                        </Link>
+                        <Box mx={1} className="cursor">
+                            <Typography variant="h6" color="inherit">
+                                Mural
+                            </Typography>
                         </Box>
+                        <Box mx={1} className="cursor">
+                            <Typography variant="h6" color="inherit" >
+                                Extras
+                            </Typography>
                         </Box>
+                        <Link to='/Contato' className='text-decorator-none'>
+                            <Box mx={1} className="cursor">
+                                <Typography variant="h6" color="inherit" >
+                                    Contato
+                                </Typography>
+                            </Box>
+                        </Link>
+                    </Box>
 
-                        </Toolbar>
-                        </AppBar>
+                </Toolbar>
+            </AppBar>
 
-                </>
+        </>
 
-                )
+    )
 }
-                export default Navbar;
+export default Navbar;
