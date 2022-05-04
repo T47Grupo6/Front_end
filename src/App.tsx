@@ -6,6 +6,7 @@ import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
 import SobreNos from './paginas/sobreNos/SobreNos';
 import Contato from './paginas/contato/Contato';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import './App.css';
 ;
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/sobrenos" element={<SobreNos />} />
             <Route path="/contato" element={<Contato />} />
+            <Route path="/cadastrousuario" element={<CadastroUsuario />} />
           </Routes>
         </div>
         <Footer />  

@@ -36,17 +36,18 @@ function Navbar() {
                                 Mural
                             </Typography>
                         </Box>
-                        <Box mx={1} className="cursor">
-                            <Typography variant="h6" color="inherit" >
-                                Extras
-                            </Typography>
-                        </Box>
                         <Link to='/Contato' className='text-decorator-none'>
                             <Box mx={1} className="cursor">
                                 <Typography variant="h6" color="inherit" >
                                     Contato
                                 </Typography>
                             </Box>
+                        </Link>
+                        <Link to='/Login' className='logout'>                        <Box mx={1} className="cursor">
+                            <Typography variant="h6" color="inherit" >
+                            Logout
+                            </Typography>
+                        </Box>
                         </Link>
                     </Box>
 
