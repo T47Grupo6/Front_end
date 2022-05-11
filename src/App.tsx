@@ -12,9 +12,6 @@ import CadastroProduto from './components/produto/cadastroProduto/CadastroProdut
 import CadastroCategoria from './components/categoria/cadastroCategoria/CadastroCategoria';
 import DeletarProduto from './components/produto/deletarProduto/DeletarProduto';
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
-import { Provider } from 'react-redux';
-import store from './store/store';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SobreNos from './paginas/sobreNos/SobreNos';
 

@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import './CadastroCategoria.css';
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'; 
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
