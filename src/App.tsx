@@ -12,9 +12,6 @@ import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
 import CadastroCategoria from './components/categoria/cadastroCategoria/CadastroCategoria';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
-import { Provider } from 'react-redux';
-import store from './store/store';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
