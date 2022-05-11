@@ -13,9 +13,11 @@ function Login() {
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
+            nome: '',
             usuario: '',            
-            dataNascimento: '',
             senha: '',
+            foto: '',
+            dataNascimento: '',
             token: ''
         }
     )

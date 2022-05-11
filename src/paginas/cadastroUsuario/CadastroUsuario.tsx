@@ -5,6 +5,7 @@ import { cadastroUsuario } from '../../services/Service';
 import { Grid, Typography, TextField, Button, Box } from '@material-ui/core';
 import { Link, } from 'react-router-dom';
 import './CadastroUsuario.css';
+import { NoMeals } from '@mui/icons-material';
 
 
 function CadastroUsuario() {
@@ -15,18 +16,20 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
-            dataNascimento: '',
-            senha: ''
+            senha: '',
+            foto: '',
+            dataNascimento: ''
             
-
         })
+
     const [userResult, setUserResult] = useState<User>(
         {
             id: 0,
             nome: '',
             usuario: '',
-            dataNascimento: '',
-            senha: ''
+            senha: '',
+            foto: '',
+            dataNascimento: ''
             
         })
 
@@ -54,7 +57,9 @@ function CadastroUsuario() {
         if (confirmarSenha == user.senha) {
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
             alert('Usuario cadastrado com sucesso')
-        } else {
+        } 
+        
+        else {
             alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
         }
     }
