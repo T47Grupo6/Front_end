@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import {Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
-import './DeletarPostagem.css';
+import './DeletarProduto.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import Postagem from '../../../models/Postagem';
+import Produto from '../../../models/Produto';
 import { buscaId, deleteId } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
-function DeletarPostagem() {
+function DeletarProduto() {
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
     );
-    const [post, setPosts] = useState<Postagem>()
+    const [produto, setProduto] = useState<Produto>()
 
     useEffect(() => {
         if (token == "") {
@@ -40,7 +40,7 @@ function DeletarPostagem() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/postagens/${id}`, setPosts, {
+        buscaId(`/produto/${id}`, setProduto, {
             headers: {
               'Authorization': token
             }
@@ -48,13 +48,13 @@ function DeletarPostagem() {
         }
 
         function sim() {
-            navigate('/posts')
-            deleteId(`/postagens/${id}`, {
+            navigate('/produto')
+            deleteId(`/produto/${id}`, {
               headers: {
                 'Authorization': token
               }
             });
-            toast.success('Postagem deletada com sucesso', {
+            toast.success('Produto deletada com sucesso', {
               position: "top-right",
               autoClose: 2000,
               hideProgressBar: false,
@@ -67,7 +67,7 @@ function DeletarPostagem() {
           }
         
           function nao() {
-            navigate('/posts')
+            navigate('/produto')
           }
   return (
     <>
@@ -76,10 +76,10 @@ function DeletarPostagem() {
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
-                Deseja deletar a Postagem:
+                Deseja deletar o Produto:
               </Typography>
               <Typography color="textSecondary" >
-              {post?.titulo}
+              {produto?.titulo}
               </Typography>
             </Box>
 
@@ -103,4 +103,4 @@ function DeletarPostagem() {
     </>
   );
 }
-export default DeletarPostagem;
+export default DeletarProduto;

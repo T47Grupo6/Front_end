@@ -1,11 +1,23 @@
 import React from 'react';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import { Typography, Box, Grid } from '@material-ui/core';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import {Typography, Box, Grid } from '@material-ui/core';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+
 
 function Footer() {
-    return (
-        <>
-            <Grid container direction="row" justifyContent="center" alignItems="center">
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
+   
+    var footerComponent;
+
+    if(token != ""){
+
+        footerComponent = <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
                     <Box style={{ backgroundColor: "#8B4513", height: "120px" }}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
@@ -31,8 +43,13 @@ function Footer() {
                     </Box>
                 </Grid>
             </Grid>
-        </>
-    )
-}
-
-export default Footer;
+       }
+       return (
+           <>
+              {footerComponent}
+           </>
+       )
+   }
+   
+   export default Footer;
+   

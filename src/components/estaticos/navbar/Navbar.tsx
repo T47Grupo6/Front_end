@@ -24,7 +24,7 @@ function Navbar() {
                                 </Typography>
                             </Box>
                         </Link>
-                        <Link to='/Produtos' className='text-decorator-none'>
+                        <Link to='/Produto' className='text-decorator-none'>
                             <Box mx={1} className="cursor">
                                 <Typography variant="h6" color="inherit">
                                     Produtos
@@ -45,7 +45,7 @@ function Navbar() {
                             </Box>
                         </Link>
 
-                        <Link to='/formularioProdutos' className='text-decorator-none'>
+                        <Link to='/formularioProduto' className='text-decorator-none'>
                             <Box mx={1} className="cursor">
                                 <Typography variant="h6" color="inherit" >
                                     Cadastrar Produtos

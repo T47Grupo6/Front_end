@@ -1,19 +1,19 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
-import './CadastroPost.css';
+import './CadastroProduto.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import Tema from '../../../models/Categoria';
-import Postagem from '../../../models/Postagem';
+import Categoria from '../../../models/Categoria';
+import Produto from '../../../models/Produto';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import {toast, ToastContainer} from 'react-toastify';
+import {toast} from 'react-toastify';
 
 
-function CadastroPost() {
+function CadastroProduto() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const [temas, setTemas] = useState<Tema[]>([])
+    const [categorias, setCategorias] = useState<Categoria[]>([])
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
       );
@@ -35,54 +35,54 @@ function CadastroPost() {
         }
     }, [token])
 
-    const [tema, setTema] = useState<Tema>(
+    const [categoria, setCategoria] = useState<Categoria>(
         {
             id: 0,
             descricao: ''
         })
-    const [postagem, setPostagem] = useState<Postagem>({
+    const [produto, setProduto] = useState<Produto>({
         id: 0,
         titulo: '',
         texto: '',
-        tema: null
+        categoria: null
     })
 
     useEffect(() => { 
-        setPostagem({
-            ...postagem,
-            tema: tema
+        setProduto({
+            ...produto,
+            categoria: produto
         })
-    }, [tema])
+    }, [categoria])
 
     useEffect(() => {
-        getTemas()
+        getCategorias()
         if (id !== undefined) {
-            findByIdPostagem(id)
+            findByIdProduto(id)
         }
     }, [id])
 
-    async function getTemas() {
-        await busca("/tema", setTemas, {
+    async function getCategorias() {
+        await busca("/categoria", setCategorias, {
             headers: {
                 'Authorization': token
             }
         })
     }
 
-    async function findByIdPostagem(id: string) {
-        await buscaId(`postagens/${id}`, setPostagem, {
+    async function findByIdProduto(id: string) {
+        await buscaId(`produto/${id}`, setProduto, {
             headers: {
                 'Authorization': token
             }
         })
     }
 
-    function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
+    function updatedProduto(e: ChangeEvent<HTMLInputElement>) {
 
-        setPostagem({
-            ...postagem,
+        setProduto({
+            ...produto,
             [e.target.name]: e.target.value,
-            tema: tema
+            categoria: produto
         })
 
     }
@@ -91,12 +91,12 @@ function CadastroPost() {
         e.preventDefault()
 
         if (id !== undefined) {
-            put(`/postagens`, postagem, setPostagem, {
+            put(`/produto`, produto, setProduto, {
                 headers: {
                     'Authorization': token
                 }
             })
-            toast.success('Postagem atualizada com sucesso', {
+            toast.success('Produto atualizado com sucesso', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -107,12 +107,12 @@ function CadastroPost() {
                 progress: undefined,
             });
         } else {
-            post(`/postagens`, postagem, setPostagem, {
+            post(`/produto`, produto, setProduto, {
                 headers: {
                     'Authorization': token
                 }
             })
-            toast.success('Postagem cadastrada com sucesso', {
+            toast.success('Produto cadastrado com sucesso', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -128,33 +128,33 @@ function CadastroPost() {
     }
 
     function back() {
-       navigate('/posts')
+       navigate('/produto')
     }
 
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro produto</Typography>
+                <TextField value={produto.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+                <TextField value={produto.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
+                        onChange={(e) => buscaId(`/categoria/${e.target.value}`, setCategoria, {
                             headers: {
                                 'Authorization': token
                             }
                         })}>
                         {
-                            temas.map(tema => (
-                                <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+                            categorias.map(categoria => (
+                                <MenuItem value={categoria.id}>{categoria.descricao}</MenuItem>
                             ))
                         }
                     </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                    <FormHelperText>Escolha uma Categoria para o produto</FormHelperText>
                     <Button type="submit" variant="contained" color="primary">
                         Finalizar
                     </Button>
@@ -163,4 +163,4 @@ function CadastroPost() {
         </Container>
     )
 }
-export default CadastroPost;
+export default CadastroProduto;
