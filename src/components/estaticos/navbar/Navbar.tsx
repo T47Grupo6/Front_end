@@ -1,12 +1,40 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Box } from '@material-ui/core'
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import {useNavigate } from 'react-router-dom'
+import './Navbar.css'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { useDispatch } from "react-redux";
+import { addToken } from '../../../store/tokens/actions';
+import {toast, ToastContainer} from 'react-toastify';
 
 function Navbar() {
-    return (
-        <>
-            <AppBar position="static" >
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
+    
+    function goLogout(){
+        dispatch(addToken(''));
+        toast.info('Usuário deslogado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+        navigate('/login')
+    }
+
+    var navbarComponent;
+
+    if(token != ""){
+        navbarComponent = <AppBar position="static" >
                 <Toolbar variant="dense" className='teste'>
                     <Link to='/Home' className="text-decorator-none">
                         <Box className="cursor">
@@ -71,9 +99,11 @@ function Navbar() {
 
                 </Toolbar>
             </AppBar>
-
-        </>
-
-    )
+  }
+  return (
+   <>
+       {navbarComponent}
+   </>
+)
 }
 export default Navbar;

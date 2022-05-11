@@ -38,6 +38,7 @@ function CadastroProduto() {
     const [categoria, setCategoria] = useState<Categoria>(
         {
             id: 0,
+            nome: '',
             descricao: ''
         })
     const [produto, setProduto] = useState<Produto>({
@@ -50,7 +51,7 @@ function CadastroProduto() {
     useEffect(() => { 
         setProduto({
             ...produto,
-            categoria: produto
+            categoria: categoria
         })
     }, [categoria])
 
@@ -82,7 +83,7 @@ function CadastroProduto() {
         setProduto({
             ...produto,
             [e.target.name]: e.target.value,
-            categoria: produto
+            categoria: categoria
         })
 
     }
@@ -139,7 +140,7 @@ function CadastroProduto() {
                 <TextField value={produto.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"

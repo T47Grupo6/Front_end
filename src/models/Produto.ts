@@ -1,10 +1,10 @@
-import Produtpo from './Produto'
+import Categoria from './Categoria'
 
 interface Produto{
     id: number;
     titulo: string;
     texto: string;
-    categoria?: Produto| null
+    categoria?: Categoria| null
 }
 
 export default Produto;

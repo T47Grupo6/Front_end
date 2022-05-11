@@ -26,7 +26,14 @@ function TabProduto() {
         </TabPanel>
         <TabPanel value="2">
           <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre-nós</Typography>
-          <Typography variant="body1" gutterBottom color="textPrimary" align="justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ut eveniet natus totam et, voluptate dicta tempore alias, odio nobis non eius cupiditate minima inventore pariatur! Ipsum itaque consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit consequuntur suscipit fugiat, nam quis quod quaerat veritatis et, vel ratione beatae, facere neque! Quo animi porro voluptate saepe deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci, officia aut quidem dolorum deserunt iure dolorem doloribus velit nobis quas consequatur at ullam odit, nesciunt est nulla nihil excepturi!</Typography>
+          <Typography variant="body1" gutterBottom color="textPrimary" align="justify">"O impacto e a responsabilidade que nossa plataforma carrega é o nosso grande diferencial
+                E a principal razão pela qual trabalhamos incansavelmente para oferecer excelência e qualidade em cada ação.
+                Nosso objetivo e principal função é cuidar de você, sem esquecer que o nosso planeta.
+                Sabemos que um trabalho ético e responsável é fundamental e imprescindível para oferecer qualidade de vida para os nossos clientes
+                E todos nossos recursos são baseados nos benefícios dos elementos naturais que nosso planeta pode nos oferecer.
+                Buscamos nos produtos naturais os cuidados com o bem-estar dos nossos clientes, levando os benefícios dos nutrientes e de origem reciclável.
+                Nosso principal objetivo é democratizar o acesso à saúde a todos os brasileiros, por meio de plataforma tecnológica, ofertando produtos naturais
+                E serviços sustentáveis com qualidade e preços justos."</Typography>
         </TabPanel>
       </TabContext>
     </>
