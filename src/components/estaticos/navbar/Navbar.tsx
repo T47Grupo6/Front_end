@@ -36,6 +36,23 @@ function Navbar() {
                                 Mural
                             </Typography>
                         </Box>
+
+                        <Link to='/formularioCategoria' className='text-decorator-none'>
+                            <Box mx={1} className="cursor">
+                                <Typography variant="h6" color="inherit" >
+                                    Criar Categoria
+                                </Typography>
+                            </Box>
+                        </Link>
+
+                        <Link to='/formularioProdutos' className='text-decorator-none'>
+                            <Box mx={1} className="cursor">
+                                <Typography variant="h6" color="inherit" >
+                                    Cadastrar Produtos
+                                </Typography>
+                            </Box>
+                        </Link>
+
                         <Link to='/Contato' className='text-decorator-none'>
                             <Box mx={1} className="cursor">
                                 <Typography variant="h6" color="inherit" >
