@@ -50,7 +50,7 @@ function DeletarCategoria() {
         }
 
         function sim() {
-          navigate('/listarCategoria')
+          navigate('/categoria')
             deleteId(`/categoria/${id}`, {
               headers: {
                 'Authorization': token
@@ -69,7 +69,7 @@ function DeletarCategoria() {
           }
         
           function nao() {
-            navigate('/listarCategoria')
+            navigate('/categoria')
           }
           
   return (

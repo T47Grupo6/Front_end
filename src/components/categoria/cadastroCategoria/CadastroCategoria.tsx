@@ -104,7 +104,7 @@ function CadastroCategoria() {
     }
 
     function back() {
-        navigate('/listarCategoria')
+        navigate('/categoria')
     }
 
     return (
@@ -114,7 +114,7 @@ function CadastroCategoria() {
                         <TextField value={categoria.nomeCategoria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nomeCategoria' label='nomeCategoria' variant='outlined' name='nomeCategoria' margin='normal' fullWidth />
                         <TextField value={categoria.descricaoCategoria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='descricaoCategoria' label='descricaoCategoria' variant='outlined' name='descricaoCategoria' margin='normal' fullWidth />
                 <Button type="submit" variant="contained" color="primary">
-                    Cadastrar
+                    Finalizar
                 </Button>
             </form>
         </Container>
