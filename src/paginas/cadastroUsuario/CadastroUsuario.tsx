@@ -6,9 +6,10 @@ import { Grid, Typography, TextField, Button, Box } from '@material-ui/core';
 import { Link, } from 'react-router-dom';
 import './CadastroUsuario.css';
 import { NoMeals } from '@mui/icons-material';
-
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
+    
     let navigate = useNavigate();
     const [confirmarSenha, setConfirmarSenha] = useState<String>("")
     const [user, setUser] = useState<User>(

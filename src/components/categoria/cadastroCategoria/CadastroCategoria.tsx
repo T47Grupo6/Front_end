@@ -17,7 +17,8 @@ function CadastroCategoria() {
     );
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
-        descricao: ''
+        nomeCategoria: '',
+        descricaoCategoria: ''
     })
 
     useEffect(() => {
@@ -51,13 +52,12 @@ function CadastroCategoria() {
         })
     }
 
-    function updatedCategoria(e: ChangeEvent<HTMLInputElement>) {
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
         setCategoria({
-            ... categoria,
-            [e.target.name]: e.target.value,
+            ...categoria,
+            [e.target.name]: e.target.value
         })
-
     }
 
 
@@ -104,16 +104,17 @@ function CadastroCategoria() {
     }
 
     function back() {
-        navigate('/categoria')
+        navigate('/listarCategoria')
     }
 
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro categoria</Typography>
-                <TextField value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
+            <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'> Cadastrar  </Typography>
+                        <TextField value={categoria.nomeCategoria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nomeCategoria' label='nomeCategoria' variant='outlined' name='nomeCategoria' margin='normal' fullWidth />
+                        <TextField value={categoria.descricaoCategoria} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='descricaoCategoria' label='descricaoCategoria' variant='outlined' name='descricaoCategoria' margin='normal' fullWidth />
                 <Button type="submit" variant="contained" color="primary">
-                    Finalizar
+                    Cadastrar
                 </Button>
             </form>
         </Container>

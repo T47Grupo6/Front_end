@@ -1,6 +1,7 @@
 interface Categoria{
     id: number;
-    descricao: string;
+    nomeCategoria: string;
+    descricaoCategoria: string
 }
 
 export default Categoria;

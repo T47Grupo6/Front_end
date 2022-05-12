@@ -79,7 +79,7 @@ function DeletarProduto() {
                 Deseja deletar o Produto:
               </Typography>
               <Typography color="textSecondary" >
-              {produto?.titulo}
+              {produto?.nomeProduto}
               </Typography>
             </Box>
 

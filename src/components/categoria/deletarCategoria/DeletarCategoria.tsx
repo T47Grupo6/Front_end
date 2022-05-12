@@ -7,15 +7,16 @@ import Tema from '../../../models/Categoria';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import Categoria from '../../../models/Categoria';
 
 
-function DeletarTema() {
+function DeletarCategoria() {
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
     );
-    const [tema, setTema] = useState<Tema>()
+    const [categoria, setCategoria] = useState<Categoria>()
 
     useEffect(() => {
         if (token == "") {
@@ -41,7 +42,7 @@ function DeletarTema() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/tema/${id}`, setTema, {
+        buscaId(`/categoria/${id}`, setCategoria, {
             headers: {
               'Authorization': token
             }
@@ -49,8 +50,8 @@ function DeletarTema() {
         }
 
         function sim() {
-          navigate('/temas')
-            deleteId(`/tema/${id}`, {
+          navigate('/listarCategoria')
+            deleteId(`/categoria/${id}`, {
               headers: {
                 'Authorization': token
               }
@@ -68,7 +69,7 @@ function DeletarTema() {
           }
         
           function nao() {
-            navigate('/temas')
+            navigate('/listarCategoria')
           }
           
   return (
@@ -81,7 +82,7 @@ function DeletarTema() {
                 Deseja deletar o Tema:
               </Typography>
               <Typography color="textSecondary">
-                {tema?.descricao}
+                 {categoria?.descricaoCategoria} 
               </Typography>
             </Box>
           </CardContent>
@@ -104,4 +105,4 @@ function DeletarTema() {
     </>
   );
 }
-export default DeletarTema;
+export default DeletarCategoria;

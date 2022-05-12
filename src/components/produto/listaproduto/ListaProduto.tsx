@@ -59,13 +59,19 @@ function ListaProduto() {
                   Produtos
                 </Typography>
                 <Typography variant="h5" component="h2">
-                  {produto.titulo}
+                  {produto.nomeProduto}
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {produto.preco}
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {produto.quantidade}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.texto}
+                  {produto.descricaoProduto}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.categoria?.categoria}
+                  {produto.categoria?.nomeCategoria}
                 </Typography>
               </CardContent>
               <CardActions>
