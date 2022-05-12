@@ -38,8 +38,8 @@ function CadastroProduto() {
     const [categoria, setCategoria] = useState<Categoria>(
         {
             id: 0,
-            nome: '',
-            descricao: ''
+            nomeCategoria: '',
+            descricaoCategoria: ''
         })
     const [produto, setProduto] = useState<Produto>({
         id: 0,
@@ -68,6 +68,7 @@ function CadastroProduto() {
                 'Authorization': token
             }
         })
+        console.log(categorias)
     }
 
     async function findByIdProduto(id: string) {
@@ -151,7 +152,7 @@ function CadastroProduto() {
                         })}>
                         {
                             categorias.map(categoria => (
-                                <MenuItem value={categoria.id}>{categoria.descricao}</MenuItem>
+                                <MenuItem value={categoria.id}>{categoria.descricaoCategoria}</MenuItem>
                             ))
                         }
                     </Select>
