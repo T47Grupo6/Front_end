@@ -44,7 +44,7 @@ function CadastroProduto() {
     const [produto, setProduto] = useState<Produto>({
         id: 0,
         nomeProduto: '',
-        preco: 0,
+        preco:  0,
         quantidade: 0,
         descricaoProduto: '',
         categoria: null
@@ -63,6 +63,10 @@ function CadastroProduto() {
             findByIdProduto(id)
         }
     }, [id])
+
+    function newFunction() {
+        return ;
+    }
 
     async function getCategorias() {
         await busca("/categoria", setCategorias, {
@@ -140,7 +144,7 @@ function CadastroProduto() {
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro produto</Typography>
                 <TextField value={produto.nomeProduto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nomeProduto" label="nomeProduto" variant="outlined" name="nomeProduto" margin="normal" fullWidth />
-                <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="preco" name="preco" variant="outlined" margin="normal" fullWidth />
+                <TextField value= {produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="Preço(R$)" name= "preco" variant="outlined" margin="normal" fullWidth placeholder='R$ 0.00' />
                 <TextField value={produto.quantidade} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="quantidade" label="quantidade" name="quantidade" variant="outlined" margin="normal" fullWidth />
                 <TextField value={produto.descricaoProduto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricaoProduto" label="descricaoProduto" name="descricaoProduto" variant="outlined" margin="normal" fullWidth />
 

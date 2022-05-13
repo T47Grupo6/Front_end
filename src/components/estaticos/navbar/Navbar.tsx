@@ -59,13 +59,7 @@ function Navbar() {
                             </Typography>
                         </Box>
                     </Link>
-                    <Link to='/posts' className='text-decorator-none'>
-                        <Box mx={1} className="cursor">
-                        <Typography variant="h5" color="inherit">
-                                Lista de Produtos
-                            </Typography>
-                        </Box>
-                    </Link>
+                   
                     <Link to='/categoria' className='text-decorator-none'>
                         <Box mx={1} className="cursor">
                         <Typography variant="h5" color="inherit">
@@ -74,9 +68,7 @@ function Navbar() {
                         </Box>
                     </Link>
                     <Box mx={1} className="cursor">
-                        <Typography variant="h5" color="inherit">
-                            Mural
-                        </Typography>
+                       
                     </Box>
 
                     <Link to='/formularioCategoria' className='text-decorator-none'>

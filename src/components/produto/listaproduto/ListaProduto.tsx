@@ -62,10 +62,10 @@ function ListaProduto() {
                   {produto.nomeProduto}
                 </Typography>
                 <Typography variant="h5" component="h2">
-                  {produto.preco}
+                  R$: {produto.preco}
                 </Typography>
                 <Typography variant="h5" component="h2">
-                  {produto.quantidade}
+                 Qtd: {produto.quantidade}
                 </Typography>
                 <Typography variant="body2" component="p">
                   {produto.descricaoProduto}
