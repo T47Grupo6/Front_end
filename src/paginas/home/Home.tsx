@@ -37,21 +37,27 @@ function Home(){
         <>
        <Grid container direction="row" justifyContent="center"  alignItems="center" style={{backgroundColor: "#ffffff"}}>
            <Grid alignItems="center"  item xs={6}>
-               <Box paddingX={20} >
-<Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{color: "#BD8A44" , fontWeight: "bold "}}>Seja bem vindo(a)!</Typography>
-<Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{color: "#BD8A44"}}>Ao Mercado da Sustentabilidade</Typography>
-       </Box>
-       <Box display="flex" justifyContent="center">
-           <Box marginRight={1} >
-               </Box>
-               <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#6B8E23", color: "white"}}>Ver Postagens</Button>
-       </Box>
+                <Box paddingX={20} >
+                    <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{color: "#BD8A44" , fontWeight: "bold "}}>Seja bem vindo(a)!</Typography>
+                    <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{color: "#BD8A44"}}>Ao Mercado da Sustentabilidade</Typography>
+                </Box>
+
+                <Box display="flex" justifyContent="center">
+                        <Box marginRight={1}>
+                            <ModalProduto />
+                        </Box>
+
+                        <Link to="/produto" className="text-decorator-none">
+                            <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#6B8E23", color: "white"}}>Ver Produtos</Button>
+                        </Link>
+                </Box>
            </Grid>
+
            <Grid item xs={6} >
                <img src="https://i.imgur.com/j2DFr51.jpg" alt="" width="700px" height="500px" />
            </Grid>
            <Grid xs={12}  style={{ backgroundColor: "OliveDrab" }} >
-
+                <TabProduto />
            </Grid>
        </Grid>
         </>

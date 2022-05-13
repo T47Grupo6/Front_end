@@ -36,7 +36,7 @@ function Footer() {
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright:</Typography>
                         </Box>
                         <Box>
-                            <a target="_blank" href="https://antigo.mma.gov.br/responsabilidade-socioambiental/producao-e-consumo-sustentavel/conceitos/consumo-sustentavel.html" rel="noopener noreferrer">
+                            <a className="text-decorator-none" target="_blank" href="https://antigo.mma.gov.br/responsabilidade-socioambiental/producao-e-consumo-sustentavel/conceitos/consumo-sustentavel.html" rel="noopener noreferrer">
                                 <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">SAVENATURE</Typography>
                             </a>
                         </Box>

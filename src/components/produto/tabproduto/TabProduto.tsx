@@ -13,9 +13,9 @@ function TabProduto() {
   return (
     <>
       <TabContext value={value}>
-        <AppBar position="static">
+        <AppBar position="static" style={{ backgroundColor: "#958143"}}>
           <Tabs centered indicatorColor="secondary" onChange={handleChange}>
-            <Tab label="Todas os produtos" value="1"/>
+            <Tab label="Todas os produtos" value="1" />
             <Tab label="Sobre-nós" value="2" />
           </Tabs>
         </AppBar>
@@ -26,7 +26,7 @@ function TabProduto() {
         </TabPanel>
         <TabPanel value="2">
           <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre-nós</Typography>
-          <Typography variant="body1" gutterBottom color="textPrimary" align="justify">"O impacto e a responsabilidade que nossa plataforma carrega é o nosso grande diferencial
+          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='texto'>"O impacto e a responsabilidade que nossa plataforma carrega é o nosso grande diferencial
                 E a principal razão pela qual trabalhamos incansavelmente para oferecer excelência e qualidade em cada ação.
                 Nosso objetivo e principal função é cuidar de você, sem esquecer que o nosso planeta.
                 Sabemos que um trabalho ético e responsável é fundamental e imprescindível para oferecer qualidade de vida para os nossos clientes
