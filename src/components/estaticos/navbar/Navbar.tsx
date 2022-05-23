@@ -36,13 +36,22 @@ function Navbar() {
     if (token != "") {
         navbarComponent = <AppBar position="static" >
             <Toolbar variant="dense" className='teste'>
-                <Link to='/Home' className="text-decorator-none">
+                <Link to='/Vitrine' className="text-decorator-none">
                     <Box className="cursor">
                         <Typography variant="h3" color="inherit" >
                             SaveNature
                         </Typography>
                     </Box>
                 </Link>
+
+                <Box display="flex" justifyContent="start" className='direita'>
+                    <Link to='/Home' className="text-decorator-none">
+                        <Box mx={1} className="cursor">
+                            <Typography variant="h5" color="inherit">
+                                Home
+                            </Typography>
+                        </Box>
+                    </Link>
 
                 <Box display="flex" justifyContent="start" className='direita'>
                     <Link to='/SobreNos' className="text-decorator-none">
@@ -94,13 +103,16 @@ function Navbar() {
                             </Typography>
                         </Box>
                     </Link>
-                    <Link to='/Login' className='direita2' >
+                    <Box display="flex" justifyContent="start" className='text-decorator-none'>
+                    <Link to='/Login' className='direita' >
                         <Box mx={1} className="cursor">
                             <Typography variant="h5" color="inherit" >
                                 Logout
                             </Typography>
                         </Box>
                     </Link>
+                </Box>
+                </Box>
                 </Box>
 
             </Toolbar>

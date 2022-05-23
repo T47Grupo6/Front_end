@@ -1,3 +1,9 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.configimg {
+    width: 100px;
+    height: 100px;
+}
+style={{ backgroundColor: "OliveDrab" }}

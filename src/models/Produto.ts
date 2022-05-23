@@ -6,7 +6,9 @@ interface Produto{
     preco: number;
     quantidade: number;
     descricaoProduto: string;
-    categoria?: Categoria| null
+    fotoProduto : string;
+    categoria?: Categoria| null 
+   
 }
 
 export default Produto;

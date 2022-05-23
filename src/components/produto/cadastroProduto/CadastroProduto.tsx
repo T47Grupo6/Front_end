@@ -47,7 +47,9 @@ function CadastroProduto() {
         preco:  0,
         quantidade: 0,
         descricaoProduto: '',
+        fotoProduto: '',
         categoria: null
+        
     })
 
     useEffect(() => {
@@ -86,20 +88,18 @@ function CadastroProduto() {
     }
 
     function updatedProduto(e: ChangeEvent<HTMLInputElement>) {
-
         setProduto({
             ...produto,
             [e.target.name]: e.target.value,
             categoria: categoria
         })
-
     }
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
         if (id !== undefined) {
-            put(`/produto`, produto, setProduto, {
+            await put(`/produto`, produto, setProduto, {
                 headers: {
                     'Authorization': token
                 }
@@ -115,11 +115,14 @@ function CadastroProduto() {
                 progress: undefined,
             });
         } else {
-            post(`/produto`, produto, setProduto, {
+            await post(`/produto`, produto, setProduto, {
                 headers: {
                     'Authorization': token
                 }
             })
+
+
+
             toast.success('Produto cadastrado com sucesso', {
                 position: "top-right",
                 autoClose: 2000,
@@ -147,7 +150,8 @@ function CadastroProduto() {
                 <TextField value= {produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="Preço(R$)" name= "preco" variant="outlined" margin="normal" fullWidth placeholder='R$ 0.00' />
                 <TextField value={produto.quantidade} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="quantidade" label="quantidade" name="quantidade" variant="outlined" margin="normal" fullWidth />
                 <TextField value={produto.descricaoProduto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricaoProduto" label="descricaoProduto" name="descricaoProduto" variant="outlined" margin="normal" fullWidth />
-
+                <TextField value={produto.fotoProduto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="fotoProduto" label="fotoProduto" name="fotoProduto" variant="outlined" margin="normal" placeholder='Insira a foto do produto (opcional)' fullWidth />
+                
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
                     <Select
